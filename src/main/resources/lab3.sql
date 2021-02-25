@@ -25,14 +25,11 @@
 #          join album a on a.AlbumId = track.AlbumId
 #          join mediatype m on m.MediaTypeId = track.MediaTypeId;
 #
-# # NOT FINISHED -----------------------------------------------+-------------------------
-# # 5~ Provide a query that shows all Invoices but includes the # of invoice line items.
+# # 5 Provide a query that shows all Invoices but includes the # of invoice line items.
 # select i.InvoiceId, BillingCountry, Total, InvoiceLineId, TrackId, count(i.InvoiceId)
 # from invoice
 #          join invoiceline i on invoice.InvoiceId = i.InvoiceId
 # group by i.InvoiceId;
-# # NOT FINISHED -----------------------------------------------+-------------------------
-#
 #
 # # 6. Provide a query that shows total sales made by each sales agent.
 # select EmployeeId, employee.LastName, employee.FirstName, Title, sum(Total)
