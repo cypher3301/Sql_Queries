@@ -12,8 +12,7 @@
 # # 3. Provide a query showing the Invoices of customers who are from Brazil. The resultant table
 # # should show the customer’s full name, Invoice ID, Date of the invoice and billing country.
 # select FirstName, LastName, InvoiceId, InvoiceDate, Country
-# from Customer,
-#      Invoice
+# from Customer inner join invoice i on customer.CustomerId = i.CustomerId
 # where Country = 'Brazil';
 #
 # # 4. Provide a query showing only the Employees who are Sales Agents.

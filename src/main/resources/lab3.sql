@@ -7,7 +7,7 @@
 #          join album a on t.AlbumId = a.AlbumId
 #          join artist a2 on a.ArtistId = a2.ArtistId;
 #
-# # 2. Provide a query that shows the # of invoices per country. HINT: GROUP BY
+# # 2. Provide a query that shows the count of invoices per country. HINT: GROUP BY
 # select BillingCountry, count(*) as 'number of invoice'
 # from invoice
 # group by BillingCountry;
@@ -25,11 +25,10 @@
 #          join album a on a.AlbumId = track.AlbumId
 #          join mediatype m on m.MediaTypeId = track.MediaTypeId;
 #
-# # 5 Provide a query that shows all Invoices but includes the # of invoice line items.
-# select i.InvoiceId, BillingCountry, Total, InvoiceLineId, TrackId, count(i.InvoiceId)
-# from invoice
-#          join invoiceline i on invoice.InvoiceId = i.InvoiceId
-# group by i.InvoiceId;
+# # 5 Provide a query that shows all Invoices but includes the count of invoice line items.
+# select InvoiceId, count(InvoiceLineId)
+# from invoiceline
+# group by InvoiceId;
 #
 # # 6. Provide a query that shows total sales made by each sales agent.
 # select EmployeeId, employee.LastName, employee.FirstName, Title, sum(Total)
@@ -68,7 +67,7 @@
 # order by sum(Total) desc
 # LIMIT 1;
 #
-# # 10. Provide a query that shows the # of customers assigned to each sales agent.
+# # 10. Provide a query that shows the count of customers assigned to each sales agent.
 # select EmployeeId, employee.LastName, employee.FirstName, Title, count(CustomerId)
 # from employee
 #          inner join customer c on employee.EmployeeId = c.SupportRepId
